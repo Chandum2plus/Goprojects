@@ -23,7 +23,7 @@ import (
 //
 // OPTIONS http://localhost:8080/users/1 with  Header "origin" set to some domain and
 
-type //UserResource struct{}
+//UserResource struct{}
 
 func (u UserResource) RegisterTo(container *restful.Container) {
 	ws := new(restful.WebService)

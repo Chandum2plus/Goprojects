@@ -6,7 +6,7 @@ import (
 )
 
 func homepage(w http.ResponseWriter, r *http.Request) {
-
+	log.Println("server is starting ")
 }
 func handleRequests() {
 	http.HandleFunc("/", homepage)

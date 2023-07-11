@@ -1,5 +1,6 @@
 package main
 
+// calculation of arithmetic operation
 import (
 	"encoding/json"
 	"fmt"
