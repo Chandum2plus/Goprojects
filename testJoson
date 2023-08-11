@@ -1,0 +1,12 @@
+{
+ "name": "Chandu kumar",
+ "add": "obra",
+ "id": 123,
+ "MonthlySalary": [
+  {
+   "Basic": 233300,
+   "Hra": 5000,
+   "Ta": 2000
+  }
+ ]
+}
