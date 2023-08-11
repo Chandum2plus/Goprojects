@@ -30,11 +30,11 @@ func main() {
 func sum(req *restful.Request, res *restful.Response) {
 
 	type No struct {
-		Nos []int `json:"no"`
+		Nos []float64 `json:"no"`
 	}
 	no := No{}
 	req.ReadEntity(&no)
-	fmt.Println(no)
+	fmt.Println(&no)
 	sum := 0.0
 
 	for _, n := range no.Nos {
@@ -57,6 +57,11 @@ func sum(req *restful.Request, res *restful.Response) {
 	//	}
 	//	fmt.Println(noInterface)
 	}*/
-	res.WriteAsJson(sum)
+	res.WriteAsJson(&sum)
+	// Test the code on postman
+	// like this -:
+	//  {
+	//   "no":[2.4,5.6]
+	//   }
 
 }
