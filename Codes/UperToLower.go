@@ -20,6 +20,22 @@ func UpToLow() {
 		fmt.Println("lower case -", res)
 	}
 }
+
+// Example of an Array in golang ....
+func array(ar string) {
+	r := [100]rune{}
+	for i, v := range ar {
+		r[i] = v
+
+		fmt.Println("rune = ", string(ar[i]))
+	}
+	a := strings.ToUpper(ar)
+	fmt.Println(a)
+}
 func main() {
-	UpToLow()
+	//UpToLow()
+	var arr string
+	fmt.Print("Enter Your Name - ")
+	fmt.Scan(&arr)
+	array(arr)
 }

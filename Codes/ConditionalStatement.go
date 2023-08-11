@@ -89,14 +89,14 @@ Expected Output :
 Congratulation! You are eligible for casting your vote.
 */
 func vote() {
-	var age int
+	var age float64
 	fmt.Println("== HERE,WE WILL CHECK YOUR ELIGIBLE FOR VOTE OR NOT ==")
 	fmt.Print("\nEnter the Age - ")
 	fmt.Scan(&age)
 	if age >= 18 && age <= 80 {
 		fmt.Println("You are eligible for Vote")
 
-	} else if age <= 17 {
+	} else if age < 18 {
 		fmt.Println("You are not eligible for Vote")
 	} else if age >= 80 {
 		fmt.Println("You are Retired You can't Vote,so please go and rest ")
@@ -276,6 +276,40 @@ func percentatage() {
 	}
 }
 
+// find the age from date of birth
+func age() {
+	var crDate, crMonth, crYear, brDate, brMonth, brYear int
+	fmt.Println("Enter the Date of Birth like - / Month / Year")
+	fmt.Scanln(&brDate, brMonth, brYear)
+	// Day of the every month
+	month := [12]int{31, 28, 31, 30, 31, 30,
+		31, 31, 30, 31, 30, 31}
+
+	// if the date is greater than current date ,then do not count this
+	// month and add 30 to the date so as to subtract the date and get the remaining days
+
+	if brDate > crDate {
+		crDate = crDate + month[brMonth-1]
+		crMonth = crMonth - 1
+	}
+
+	// if the birth month exceeds current month,then do not count this
+	// year and add 12 to the month so that we can subtract
+	// and find out the difference
+
+	if brMonth > crMonth {
+		crYear = crYear - 1
+		crMonth = crMonth + 12
+	}
+	// calculated date month year
+	resDate := crDate - brDate
+	resMonth := crMonth - brMonth
+	resYear := crYear - brYear
+
+	// display the result
+	fmt.Printf("\nAge = \nYear:- %d  Month:- %d  Days:- %d\n", resYear, resMonth, resDate)
+}
+
 func main() {
 
 	for {
@@ -290,6 +324,7 @@ func main() {
 		fmt.Println("||    7 - Test Greatest Number       ||")
 		fmt.Println("||    8 - Test Eligible for Adm.     ||")
 		fmt.Println("||    9 - Test the Result of Student ||")
+		fmt.Println("||   10 - Test the Age from DOB      ||")
 		fmt.Println("=======================================")
 		var choice int
 		fmt.Print("\nEnter your Choice - ")
@@ -321,8 +356,10 @@ func main() {
 			addmission()
 		case 9:
 			percentatage()
+		case 10:
+			age()
 		default:
-			fmt.Println("Please Enter the valid Choice We don't have 10th Choice ")
+			fmt.Println("Please Enter the valid Choice We don't have 11th Choice ")
 		}
 	}
 
