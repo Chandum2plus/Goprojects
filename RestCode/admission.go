@@ -22,7 +22,7 @@ func main() {
 	webservice := &restful.WebService{}
 	RoutBuilder := &restful.RouteBuilder{}
 	RoutBuilder.Doc("Testing the Student is Eligible for Admission or Not according to their Marks ")
-	RoutBuilder.Path("admission")
+	RoutBuilder.Path("/add")
 	RoutBuilder.Method("POST")
 	RoutBuilder.To(admission)
 	RoutBuilder.Consumes(restful.MIME_JSON, restful.MIME_XML)

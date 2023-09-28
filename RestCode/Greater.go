@@ -24,6 +24,8 @@ func main() {
 	port := ":7887"
 	http.ListenAndServe(port, container)
 }
+
+// http://localhost:/7878/greatest
 func greatest(req *restful.Request, res *restful.Response) {
 	type GREATEST struct {
 		Num1 float64 `json:"num1"`

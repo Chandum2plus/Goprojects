@@ -10,7 +10,7 @@ import (
 var (
 	partList    = []string{"A", "B", "C", "D"}
 	nAssemblies = 3
-	wg          sync.WaitGroup
+	wgs         sync.WaitGroup
 )
 
 func worker(part string) {
