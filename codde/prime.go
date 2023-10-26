@@ -16,7 +16,7 @@ func prime() {
 		}
 	}
 	if count == 0 && count != 1 {
-		fmt.Println(num, "Prime numbe ")
+		fmt.Println(num, "Prime number ")
 	} else {
 		fmt.Println(num, "Not prime number")
 	}
@@ -66,7 +66,7 @@ func primeMinMax() {
 }
 func main() {
 
-	//prime()
-	primeMinMax()
+	prime()
+	//primeMinMax()
 
 }
