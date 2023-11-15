@@ -48,24 +48,42 @@ func decodingJsons() {
 		Age   int
 		Email string
 	}
-	d := Details{
-		Name:  "Chandu kumar",
-		Age:   23,
-		Email: "chandukumarbca@gmail.com",
-	}
+	//d := Details{
+	//	Name:  "Chandu kumar",
+	//	Age:   23,
+	//	Email: "chandukumarbca@gmail.com",
+	//}
+	var d Details
 
 	// single data decoding
 	data := []byte(`{
-"Name":"Chnadu kumar",
+"Name":"Chandu kumar",
 "Age":23,
 "Email":"chandukumarbca@gmail.com"
 `)
+
 	err := json.Unmarshal(data, &d)
 	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println(string(data))
 
+	d2 := Details{
+		Name:  "Chandu kumar",
+		Age:   23,
+		Email: "chandukumarbca@gmail.com",
+	}
+
+	data2 := []byte(`{
+"Name":"Rambhu kumar",
+"Age":23,
+"Email":"rambhukumarbca@gmail.com"
+`)
+	err3 := json.Unmarshal(data2, &d2)
+	if err3 != nil {
+		fmt.Println(err3)
+	}
+	fmt.Println(string(data2))
 	// Decoding json Array
 	//d1 := []Details{
 	//	{Name: "Chandu_kumar", Age: 23, Email: "chandukumarbca@gmail.com"},
@@ -80,12 +98,12 @@ func decodingJsons() {
 
 	data1 := []byte(`
 [
-{"Name": "Chandu_kumar", "Age":23, "Email": "chandukumarbca@gmail.com",
-"Name": "Rambhu_kumar", "Age":23, "Email": "rambhukumarbca@gmail.com",
-"Name": "Sonal_kumar", "Age":29, "Email": "sonalkumarbca@gmail.com",
-"Name": "Paras_kumar", "Age":23, "Email": "paraskumarbca@gmail.com",
-"Name": "Saurabh_kumar", "Age":23, "Email" :"saurabhkumarbca@gmail.com",
-"Name": "Manish_kumar", "Age":28, "Email": "manishkumarbca@gmail.com"}
+{"Name": "Chandu_kumar", "Age":23, "Email": "chandukumarbca@gmail.com"},
+{"Name": "Rambhu_kumar", "Age":23, "Email": "rambhukumarbca@gmail.com"},
+{"Name": "Sonal_kumar", "Age":29, "Email": "sonalkumarbca@gmail.com"},
+{"Name": "Paras_kumar", "Age":23, "Email": "paraskumarbca@gmail.com"},
+{"Name": "Saurabh_kumar", "Age":23, "Email" :"saurabhkumarbca@gmail.com"},
+{"Name": "Manish_kumar", "Age":28, "Email": "manishkumarbca@gmail.com"}
 ]`)
 
 	err1 := json.Unmarshal(data1, &d1)
@@ -98,7 +116,7 @@ func decodingJsons() {
 	//fmt.Println(&data1)
 	//fmt.Println(string(data1))
 	for i := range d1 {
-		fmt.Print(d1[i])
+		fmt.Println(d1[i])
 		//fmt.Printf("%s", string(data1[i]))
 	}
 }

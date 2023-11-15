@@ -35,8 +35,8 @@ func (e Emp) PrintAge(age float64, house int) {
 
 // This is the Main function
 func main() {
-	var e1 Employee                                             // it is the variable of Employee type
-	e1 = Emp(1)                                                 // passing the id No
+	var e1 Employee                                             // it is the variable of Employee type that is the interface
+	e1 = Emp(1)                                                 // passing the id No.
 	e1.PrintName("Chandu kumar", "TCS")                         // passing the name and the comp Name
 	e1.PrintAge(22.8, 35)                                       // passing the age and house number
 	fmt.Println("Employee Salary -", e1.PrintSalary(255000, 5)) // Here passing and printing the salary included tax paid
