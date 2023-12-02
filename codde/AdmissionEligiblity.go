@@ -55,6 +55,10 @@ Total Marks = 240
 Percentage = 80.00
 Division = First
 */
+func hello() {
+	fmt.Println("Hello world")
+}
 func main() {
-	admissionCriteria()
+	//admissionCriteria()
+	hello()
 }
