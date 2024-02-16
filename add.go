@@ -12,7 +12,16 @@ import "fmt"
 //
 // }
 func main() {
-	fmt.Println("Hello World")
-	fmt.Print("Hello Github !")
-	
+	//fmt.Println("Hello World")
+	//fmt.Print("Hello Github !")
+
+	var num int
+	fmt.Print("Enter number: ")
+	fmt.Scan(&num)
+	if num > 0 {
+		fmt.Println(num, "is Positive number")
+	} else {
+		fmt.Println(num, "is Negative number")
+	}
+
 }
